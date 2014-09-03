@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: #bfa57c;
+    color: #fff;
+}
+
+body {
+    color: #a48d66;
+    font: 14px/23px proxima-nova-alt, "Proxima Nova Alt", sans-serif;
+}
+
+h1, h2, h3, h4, b {
+    font-weight: 300;
+    font-family: bree-web, Bree, sans-serif;
+}
+h2 {
+    font-size: 28px;
+    padding-bottom: 60px;
+}
+b {
+    font-weight: 500;
+    font-size: 16px;
+    color: #c3522f;
+}
+#logo {
+    position: absolute;
+    left: 80px;
+    top: 40px;
+    z-index: 2;
+
+    margin-left: -17px;
+}
+
+.container:before,  
+.container:after {  
+    clear: both;  
+    display: table;  
+    line-height: 0;  
+    content: "";  
+}  
+.logo{
+    margin: 0px 0px 0px 15px;
+    padding: 10px 0 10px;
+}
+
+.logo-text{
+    display:  inline-block;
+    margin: 10px 0px 0px 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: normal;
+    color: green;
+}
+
+
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+    color: rgba(255,255,255,.6);
+    text-shadow: 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.3);
+
+    background: #5b4d3d;
+    box-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+.banner ul {
+    list-style: none;
+    width: 300%;
+}
+.banner ul li {
+    display: block;
+    float: left;
+    width: 33%;
+    min-height: 350px;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,.1);
+}
+
+.banner .inner {
+    padding: 160px 0 110px;
+}
+
+.banner h1, .banner h2 {
+    font-size: 40px;
+    line-height: 52px;
+
+    color: #fff;
+}
+
+.banner .btn {
+    display: inline-block;
+    margin: 25px 0 0;
+    padding: 9px 22px 7px;
+    clear: both;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,.4);
+    border-radius: 5px;
+}
+.banner .btn:hover {
+    background: rgba(255,255,255,.05);
+}
+.banner .btn:active {
+    -webkit-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    -moz-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    -ms-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    -o-filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+    filter: drop-shadow(0 -1px 2px rgba(0,0,0,.5));
+}
+
+.banner .btn, .banner .dot {
+    -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+}
+
+.banner .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    width: 100%;
+}
+.banner .dots li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    *text-indent: 0;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+.banner .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
+
+.banner .arrows {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+}
+.banner .arrow {
+    display: inline;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.loginpanle{
+    margin: 0 auto;
+    display: block;
+    padding: 20px 0;
+    width: 300px;
+
+    //border: solid red 1px;
+}
+
+.msg{
+    display: block; 
+    padding: 10px 0px 0px 0px;
+    color: red;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 1em;
+    line-height: normal;
+} 
+
+.footer {
+    margin: 0 auto;
+    padding: 1px 0 1px;
+    text-align: center;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px), (max-width: 900px) {
+    #logo {
+        left: 50px;
+        top: 30px;
+    }
+    .banner h1, .banner h2 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .banner ul li {
+        height: 240px;
+    }
+    .banner .inner {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    .banner p {
+        font-size: 15px;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .features li:before {
+        background: url('img/icons@2x.png');
+        background-size: 100%;
+    }
+}

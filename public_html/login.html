@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/md5.js"></script>
+        <style>
+            .main-container{
+                margin:100px auto;
+                min-height: 600px;
+                min-width: 550px;
+            }
+            .loginpanle{
+                display: inline-block;
+                width:300px;
+                float: right;
+                //border: solid red 1px;
+            }   
+        </style>
+        <script type="text/javascript">
+            function testfn()
+            {
+                $.ajax({
+                    type: "get",
+                    url: "http://192.168.1.200:8080/validate/test/rp2",
+                    dataType: "jsonp",
+                    jsonp: "callbackparam", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(默认为:callback)
+                    jsonpCallback: "subFn", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+                    success: function(v) {
+                        //console.log(v);
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        err = textStatus + ':' + XMLHttpRequest.status;
+                        console.log(XMLHttpRequest.status);
+                        console.log(XMLHttpRequest.readyState);
+                        console.log(textStatus);
+                    }
+                });
+            }
+            function subFn(v)
+            {
+                console.log(v);
+                //doLogin();
+            }
+	    function doLogin() {
+		document.sendin.username.value ="u";
+		document.sendin.password.value = hexMD5('$(chap-id)' +'p' + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }            
+        </script>        
+    </head>
+    <body>
+        <div class="container main-container">
+            <div class="container">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        使用手机号码登录WIFI                       
+                    </div>
+                    <div class="panel-body">
+                        <div class="loginpanle">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-adjust"></i>
+                                </span>
+                                <input type="text" style="width: 200px" id="phno" class="form-control active">
+                                <a class="btn btn-primary" href="javascript:testfn();">登录</a>
+                            </div>
+                        </div>
+                        <form name="sendin" action="$(link-login-only)" method="post">
+                            <input type="hidden" name="username" />
+                            <input type="hidden" name="password" />
+                            <input type="hidden" name="dst" value="$(link-orig)" />
+                            <input type="hidden" name="popup" value="true" />
+                        </form>                        
+                    </div>
+                    <div class="panel-footer"></div>
+                </div>
+                <footer>
+
+                </footer>
+            </div>
+            <!-- /container -->       
+        </div>
+
+    </body>
+</html>
